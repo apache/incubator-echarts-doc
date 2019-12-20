@@ -91,7 +91,7 @@ myChart.setOption({
     ]
 });
 ```
-注意，如果没有指定 id，第二次 setOption 时会按照元素在 option 中出现的顺序和已有的图形元素进行匹配。这有时会产生不易理解的效果。
+**注意:**如果没有指定 id，第二次 setOption 时会按照元素在 option 中出现的顺序和已有的图形元素进行匹配。这有时会产生不易理解的效果。
 所以，一般来说，更新 elements 时推荐使用 id 进行准确的指定，而非省略 id。
 
 
@@ -269,7 +269,7 @@ myChart.setOption({
 
 以上两者是基本的绝对定位，除此之外，在实际应用中，容器尺寸常常是不确定甚至动态变化的，所以需要提供相对定位的机制。graphic 组件使用 [left](~graphic.elements.left) / [right](~graphic.elements.right) / [top](~graphic.elements.top) / [bottom](~graphic.elements.bottom) / [width](~graphic.elements.width) / [height](~graphic.elements.height) 提供了相对定位的机制。
 
-例如：
+**例如：**
 ```javascript
 { // 将图片定位到最下方的中间：
     type: 'image',
@@ -323,7 +323,7 @@ myChart.setOption({
 }
 ```
 
-注意，可以用 [bounding](graphic.elements.bounding) 来设置是否整体限制在父节点范围内。
+**注意:**可以用 [bounding](graphic.elements.bounding) 来设置是否整体限制在父节点范围内。
 
 
 
@@ -340,7 +340,7 @@ myChart.setOption({
 
 里面是所有图形元素的集合。
 
-注意：graphic 的标准写法是：
+**注意:**graphic 的标准写法是：
 
 ```javascript
 {

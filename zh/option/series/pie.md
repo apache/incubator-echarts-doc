@@ -189,14 +189,18 @@
 ) }}
 
 ## animationType(string) = 'expansion'
-初始动画效果，可选
-+ `'expansion'` 默认沿圆弧展开的效果。
-+ `'scale'` 缩放效果，配合设置 `animationEasing='elasticOut'` 可以做成 popup 的效果。
+初始动画效果。
+
+**可选：**
++ `'expansion'`：默认沿圆弧展开的效果。
++ `'scale'`：缩放效果，配合设置 `animationEasing='elasticOut'` 可以做成 popup 的效果。
 
 ## animationTypeUpdate(string) = 'transition'
-更新数据时的动画效果，可选：
-+ `'transition'` 通过改变起始和终止角度，从之前的数据过渡到新的数据。
-+ `'expansion'` 数据将整体重新沿圆弧展开。
+更新数据时的动画效果。
+
+**可选：**
++ `'transition'`：通过改变起始和终止角度，从之前的数据过渡到新的数据。
++ `'expansion'`：数据将整体重新沿圆弧展开。
 
 {{use:partial-animation(
     prefix="#",
@@ -215,18 +219,12 @@
 标签的位置。
 
 **可选：**
-+ `'outside'`
++ `'outside'`：饼图扇区外侧，通过[视觉引导线](~series-pie.labelLine)连到相应的扇区。
 
-    饼图扇区外侧，通过[视觉引导线](~series-pie.labelLine)连到相应的扇区。
-
-+ `'inside'`
-
-    饼图扇区内部。
++ `'inside'`：饼图扇区内部。
 
 + `'inner'` 同 `'inside'`。
-+ `'center'`
-
-    在饼图中心位置。见[圆环图示例](${galleryEditorPath}pie-doughnut)
++ `'center'`：在饼图中心位置。见[圆环图示例](${galleryEditorPath}pie-doughnut)
 
 {{ /if }}
 {{ if: ${formatter} }}

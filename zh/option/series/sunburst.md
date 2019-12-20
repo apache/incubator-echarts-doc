@@ -14,7 +14,9 @@
 
 #${prefix} align(string) = 'center'
 
-文字对齐方式，可取值为：`'left'`、 `'center'`、 `'right'`。注意，`'left'` 是指靠近内圈，而 `'right'` 是指靠近外圈。
+文字对齐方式，可取值为：`'left'`、 `'center'`、 `'right'`。
+
+**注意：**`'left'` 是指靠近内圈，而 `'right'` 是指靠近外圈。
 
 ~[700x400](${galleryViewPath}doc-example/sunburst-label-align&edit=1&reset=1)
 
@@ -115,7 +117,7 @@ ECharts 中，通常使用 *emphasis* 表示鼠标移动到图形上后的高亮
 
 [旭日图（Sunburst）](https://en.wikipedia.org/wiki/Pie_chart#Ring_chart_/_Sunburst_chart_/_Multilevel_pie_chart)由多层的环形图组成，在数据结构上，内圈是外圈的父节点。因此，它既能像[饼图](~series-pie)一样表现局部和整体的占比，又能像[矩形树图](~series-treemap)一样表现层级关系。
 
-**示例：**
+**例如：**
 
 ~[700x500](${galleryViewPath}sunburst-monochrome&edit=1&reset=1)
 
@@ -140,7 +142,9 @@ ECharts 中，通常使用 *emphasis* 表示鼠标移动到图形上后的高亮
 
 ## data(Array)
 
-[series-sunburst.data](~series-sunburst.data) 的数据格式是树状的，例如：
+[series-sunburst.data](~series-sunburst.data) 的数据格式是树状的。
+
+**例如：**
 
 ```js
 [{
@@ -265,8 +269,9 @@ downplay: {
 
 ## sort(string|Function) = 'desc'
 
-扇形块根据数据 [`value`](~series-sunburst.data.value) 的排序方式，如果未指定 `value`，则其值为子元素 `value` 之和。默认值 `'desc'` 表示降序排序；还可以设置为 `'asc'` 表示升序排序；`null` 表示不排序，使用原始数据的顺序；或者用回调函数进行排列：
+扇形块根据数据 [`value`](~series-sunburst.data.value) 的排序方式，如果未指定 `value`，则其值为子元素 `value` 之和。默认值 `'desc'` 表示降序排序；还可以设置为 `'asc'` 表示升序排序；`null` 表示不排序，使用原始数据的顺序；或者用回调函数进行排列。
 
+**例如：**
 ```js
 function(nodeA, nodeB) {
     return nodeA.getValue() - nodeB.getValue();
@@ -299,7 +304,9 @@ function(nodeA, nodeB) {
 
 旭日图是一种有层次的结构，为了方便同一层样式的配置，我们提供了 levels 配置项。它是一个数组，其中的第 0 项表示数据下钻后返回上级的图形，其后的每一项分别表示从圆心向外层的层级。
 
-例如，假设我们没有数据下钻功能，并且希望将最内层的扇形块的颜色设为红色，文字设为蓝色，可以这样设置：
+假设我们没有数据下钻功能，并且希望将最内层的扇形块的颜色设为红色，文字设为蓝色，可以这样设置：
+
+**例如：**
 
 ```js
 series: {

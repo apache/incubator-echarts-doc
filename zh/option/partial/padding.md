@@ -1,8 +1,8 @@
 {{target: partial-padding}}
 
-${componentName}内边距，单位px，默认各方向内边距为5，接受数组分别设定上右下左边距。
+${componentName}内边距，单位为 px，默认各方向内边距为 5px，也可以使用数组分别设定上右下左的边距。
 
-使用示例：
+ **例如：** 
 ```js
 // 设置内边距为 5
 padding: 5

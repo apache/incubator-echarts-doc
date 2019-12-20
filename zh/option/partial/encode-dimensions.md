@@ -26,7 +26,9 @@ option = {
 }
 ```
 
-当使用 [dimensions](~series.dimensions) 给维度定义名称后，`encode` 中可直接引用名称，例如：
+当使用 [dimensions](~series.dimensions) 给维度定义名称后，`encode` 中可直接引用名称。
+
+**例如：**
 
 ```js
 series: {
@@ -136,9 +138,9 @@ var option = {
 
 使用 dimensions 定义 `series.data` 或者 `dataset.source` 的每个维度的信息。
 
-注意：如果使用了 [dataset](~dataset)，那么可以在 [dataset.source](~dataset.source) 的第一行/列中给出 dimension 名称。于是就不用在这里指定 dimension。但是，如果在这里指定了 `dimensions`，那么 ECharts 不再会自动从 `dataset.source` 的第一行/列中获取维度信息。
+**注意:**如果使用了 [dataset](~dataset)，那么可以在 [dataset.source](~dataset.source) 的第一行/列中给出 dimension 名称。于是就不用在这里指定 dimension。但是，如果在这里指定了 `dimensions`，那么 ECharts 不再会自动从 `dataset.source` 的第一行/列中获取维度信息。
 
-例如：
+**例如：**
 
 ```js
 option = {

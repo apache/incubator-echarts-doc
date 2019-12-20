@@ -5,7 +5,7 @@
 
 [Boxplot](https://en.wikipedia.org/wiki/Box_plot) 中文可以称为『箱形图』、『盒须图』、『盒式图』、『盒状图』、『箱线图』，是一种用作显示一组数据分散情况资料的统计图。它能显示出一组数据的最大值、最小值、中位数、下四分位数及上四分位数。
 
-**示例如下：**
+ **例如：** 
 
 ~[600x400](${galleryViewPath}boxplot-light-velocity&edit=1&reset=1)
 
@@ -37,7 +37,9 @@
 
 ## layout(string) = null
 
-布局方式，可选值：
+布局方式。
+
+**可选：**
 
 + `'horizontal'`：水平排布各个 box。
 

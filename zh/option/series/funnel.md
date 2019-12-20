@@ -5,7 +5,7 @@
 
 **漏斗图**
 
-**示例：**
+ **例如：** 
 ~[600x400](${galleryViewPath}funnel&reset=1&edit=1)
 
 ## type(string) = 'funnel'

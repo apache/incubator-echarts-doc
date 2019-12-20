@@ -33,7 +33,7 @@ treemap 首先是把数值映射到『面积』这种视觉元素上。
 <br>
 <br>
 <br>
-注：treemap 的配置项 和 ECharts2 相比有一些变化，一些不太成熟的配置方式不再支持或不再兼容：
+注：treemap 的配置项 和 ECharts 2 相比有一些变化，一些不太成熟的配置方式不再支持或不再兼容：
 
 + `center/size` 方式的定位不再支持，而是统一使用 `left/top/bottom/right/width/height` 方式定位。
 
@@ -462,25 +462,21 @@ treemap 默认把第一个维度（Array 第一项）映射到『面积』上。
 
 #${prefix} colorMappingBy(string) = 'index'
 
-表示同一层级节点，在颜色列表中（参见 `color` 属性）选择时，按照什么来选择。可选值：
+表示同一层级节点，在颜色列表中（参见 `color` 属性）选择时，按照什么来选择。
 
-* `'value'`：
+**可选：**
 
-将节点的值（即 [series-treemap.data.value](~series-treemap.data.value)）映射到颜色列表中。
+* `'value'`：将节点的值（即 [series-treemap.data.value](~series-treemap.data.value)）映射到颜色列表中。
 
 这样得到的颜色，反应了节点值的大小。
 
 可以使用 [visualDimension](~series-treemap.levels.visualDimension) 属性来设置，用 [data](~series-treemap.data) 中哪个纬度的值来映射。
 
-* `'index'`：
-
-将节点的 `index`（序号）映射到颜色列表中。即同一层级中，第一个节点取颜色列表中第一个颜色，第二个节点取第二个。
+* `'index'`：将节点的 `index`（序号）映射到颜色列表中。即同一层级中，第一个节点取颜色列表中第一个颜色，第二个节点取第二个。
 
 这样得到的颜色，便于区分相邻节点。
 
-* `'id'`：
-
-将节点的 `id`（即 [series-treemap.data.id](~series-treemap.data.id)）映射到颜色列表中。`id` 是用户指定的，这样能够使得，在treemap 通过 setOption 变化数值时，同一 `id` 映射到同一颜色，保持一致性。参见 [例子](${galleryEditorPath}treemap-obama&edit=1&reset=1)。
+* `'id'`：将节点的 `id`（即 [series-treemap.data.id](~series-treemap.data.id)）映射到颜色列表中。`id` 是用户指定的，这样能够使得，在treemap 通过 setOption 变化数值时，同一 `id` 映射到同一颜色，保持一致性。参见 [例子](${galleryEditorPath}treemap-obama&edit=1&reset=1)。
 
 {{ use: partial-treemap-visual-detial }}
 {{use: partial-treemap-prop-location-desc(name="colorMappingBy")}}
@@ -488,7 +484,7 @@ treemap 默认把第一个维度（Array 第一项）映射到『面积』上。
 
 #${prefix} visibleMin(number) = 10
 
-如果某个节点的矩形的面积，小于这个数值（单位：px平方），这个节点就不显示。
+如果某个节点的矩形的面积，小于这个数值（单位：px 平方），这个节点就不显示。
 
 如果不加这个限制，很小的节点会影响显示效果。
 
@@ -498,7 +494,7 @@ treemap 默认把第一个维度（Array 第一项）映射到『面积』上。
 
 #${prefix} childrenVisibleMin(number) = null
 
-如果某个节点的矩形面积，小于这个数值（单位：px平方），则不显示这个节点的子节点。
+如果某个节点的矩形面积，小于这个数值（单位：px 平方），则不显示这个节点的子节点。
 
 这能够在矩形面积不足够大时候，隐藏节点的细节。当用户用鼠标缩放节点时，如果面积大于此阈值，又会显示子节点。
 
@@ -527,9 +523,9 @@ treemap 默认把第一个维度（Array 第一项）映射到『面积』上。
 
 同 [series-treemap.label](~series-treemap.label) 一样，`upperLabel` 可以存在于 [series-treemap](~series-treemap) 的根节点，或者 [series-treemap.level](~series-treemap.level) 中，或者 [series-treemap.data](~series-treemap.data) 的每个数据项中。
 
-[series-treemap.label](~series-treemap.label) 描述的是，当前节点为叶节点时标签的样式；`upperLabel` 描述的是，当前节点为非叶节点（即含有子节点）时标签的样式。（此时标签一般会被显示在节点的最上部）
+[series-treemap.label](~series-treemap.label) 描述的是，当前节点为叶节点时标签的样式；`upperLabel` 描述的是，当前节点为非叶节点（即含有子节点）时标签的样式，（此时标签一般会被显示在节点的最上部）。
 
-参见：
+**例如：**
 
 ~[700x500](${galleryViewPath}treemap-show-parent&edit=1&reset=1)
 
@@ -652,7 +648,7 @@ treemap 默认把第一个维度（Array 第一项）映射到『面积』上。
 
 矩形边框的颜色的饱和度。取值范围是 0 ~ 1 之间的浮点数。
 
-注意：
+**例如：**
 
 如果设置此属性，则 `borderColor` 的设置无效，而是：取当前节点计算出的颜色（比如从父节点遗传而来），在此颜色值上设置 `borderColorSaturation` 得到最终颜色。这种方式，能够做出『不同区块有不同色调的矩形间隔线』的效果，能够便于区分层级。
 
@@ -680,6 +676,6 @@ treemap 默认把第一个维度（Array 第一项）映射到『面积』上。
 
 如果统一用一种颜色设置矩形的缝隙（gap），那么当不同层级的矩形同时展示时可能会出现混淆。
 
-参见 [例子](${galleryEditorPath}doc-example/treemap-borderColor&edit=1&reset=1)，注意其中红色的区块中的子矩形其实是更深层级，和其他用白色缝隙区分的矩形不是在一个层级。所以，红色区块中矩形的分割线的颜色，我们在 `borderColorSaturation` 中设置为『加了饱和度变化的红颜色』，以示区别。
+参见 [例子](${galleryEditorPath}doc-example/treemap-borderColor&edit=1&reset=1)，**注意：**其中红色的区块中的子矩形其实是更深层级，和其他用白色缝隙区分的矩形不是在一个层级。所以，红色区块中矩形的分割线的颜色，我们在 `borderColorSaturation` 中设置为『加了饱和度变化的红颜色』，以示区别。
 
 

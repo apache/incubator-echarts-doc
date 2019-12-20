@@ -10,7 +10,7 @@
 
 下面是在直角坐标系上应用的例子：
 
-**直角坐标系：**
+**直角坐标系：** 
 ~[600x400](${galleryViewPath}heatmap-cartesian&edit=1&reset=1)
 
 ## type(string) = 'heatmap'

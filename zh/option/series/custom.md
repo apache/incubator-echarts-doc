@@ -6,7 +6,7 @@
 
 自定义系列可以自定义系列中的图形元素渲染。从而能扩展出不同的图表。
 
-同时，echarts 会统一管理图形的创建删除、动画、与其他组件（如 [dataZoom](~dataZoom)、[visualMap](~visualMap)）的联动，使开发者不必纠结这些细节。
+同时，ECharts 会统一管理图形的创建删除、动画、与其他组件（如 [dataZoom](~dataZoom)、[visualMap](~visualMap)）的联动，使开发者不必纠结这些细节。
 
 **例如，下面的例子使用 custom series 扩展出了 x-range 图：**
 ~[800x500](${galleryViewPath}custom-profile&reset=1&edit=1)
@@ -282,7 +282,7 @@ renderItem 函数的第二个参数。
 
 ##### currentSeriesIndices(Function)
 
-得到系列的 当前index。注意这个 index 不同于系列定义时的 index。这个 index 是当 legend 组件进行了系列筛选后，剩余的系列排列后的 index。
+得到系列的 当前index。**注意：**这个 index 不同于系列定义时的 index。这个 index 是当 legend 组件进行了系列筛选后，剩余的系列排列后的 index。
 
 ```
 @return {number}
@@ -304,13 +304,13 @@ renderItem 函数的第二个参数。
 ##### getWidth(Function)
 
 ```
-@return {number} echarts 容器的宽度。
+@return {number} ECharts 容器的宽度。
 ```
 
 ##### getHeight(Function)
 
 ```
-@return {number} echarts 容器的高度。
+@return {number} ECharts 容器的高度。
 ```
 
 ##### getZr(Function)
@@ -332,7 +332,7 @@ renderItem 函数的第二个参数。
 
 如果什么都不渲染，可以不返回任何东西。
 
-例如：
+**例如：**
 ```js
 // 单独一个矩形
 {
@@ -474,7 +474,9 @@ renderItem 函数的第二个参数。
 
 {{target: partial-custom-renderItem-common}}
 
-custom 系列需要开发者自己提供图形渲染的逻辑。这个渲染逻辑一般命名为 [renderItem](~series-custom.renderItem)。例如：
+custom 系列需要开发者自己提供图形渲染的逻辑。这个渲染逻辑一般命名为 [renderItem](~series-custom.renderItem)。
+
+**例如：**
 
 ```js
 var option = {

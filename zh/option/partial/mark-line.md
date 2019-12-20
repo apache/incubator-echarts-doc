@@ -138,7 +138,9 @@ data: [
 #${prefix} show(boolean) = ${defaultShowLabel|default(true)}
 是否显示标签。
 #${prefix} position(string) = 'end'
-标签位置，可选：
+标签位置。
+
+**可选:**
 + `'start'` 线的起始点。
 + `'middle'` 线的中点。
 + `'end'`   线的结束点。
@@ -189,14 +191,14 @@ data: [
 ) }}
 
 #${prefix} lineStyle(Object)
-该数据项线的样式，起点和终点项的 `lineStyle`会合并到一起。
+该数据项线的样式，起点和终点项的 `lineStyle` 会合并到一起。
 {{ use: partial-line-style(
     prefix="#"+${prefix},
     hasCurveness=true
 ) }}
 
 #${prefix} label(Object)
-该数据项标签的样式，起点和终点项的 `label`会合并到一起。
+该数据项标签的样式，起点和终点项的 `label` 会合并到一起。
 {{ use: mark-line-label(
     prefix='#'+${prefix}
 ) }}

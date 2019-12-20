@@ -7,7 +7,7 @@
 
 是一种特殊的流图, 它主要用来表示事件或主题等在一段时间内的变化。
 
-**示例：**
+**例如：**
 
 ~[700x580](${galleryViewPath}themeRiver-lastfm&edit=1&reset=1)
 
@@ -34,7 +34,7 @@
     defaultHeight: 'null'
 ) }}
 
-** 注意：**
+**注意：**
 整个主题河流view的位置信息复用了单个时间轴的位置信息，即left，top，right，bottom。
 
 

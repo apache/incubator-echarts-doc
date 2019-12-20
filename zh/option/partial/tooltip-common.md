@@ -110,20 +110,14 @@
 
 触发类型。
 
-可选：
-+ `'item'`
+**可选：**
++ `'item'`：数据项图形触发，主要在散点图，饼图等无类目轴的图表中使用。
 
-    数据项图形触发，主要在散点图，饼图等无类目轴的图表中使用。
-
-+ `'axis'`
-
-    坐标轴触发，主要在柱状图，折线图等会使用类目轴的图表中使用。
++ `'axis'`：坐标轴触发，主要在柱状图，折线图等会使用类目轴的图表中使用。
 
     在 ECharts 2.x 中只支持类目轴上使用 axis trigger，在 ECharts 3 中支持在[直角坐标系](~grid)和[极坐标系](~polar)上的所有类型的轴。并且可以通过 [axisPointer.axis](~tooltip.axisPointer.axis) 指定坐标轴。
 
-+ `'none'`
-
-    什么都不触发。
++ `'none'`：什么都不触发。
 
 #${prefix} axisPointer(Object)
 
@@ -145,14 +139,14 @@
 
 指示器类型。
 
-可选
-+ `'line'` 直线指示器
+**可选：**
++ `'line'`：直线指示器
 
-+ `'shadow'` 阴影指示器
++ `'shadow'`：阴影指示器
 
-+ `'none'` 无指示器
++ `'none'`：无指示器
 
-+ `'cross'` 十字准星指示器。其实是种简写，表示启用两个正交的轴的 axisPointer。
++ `'cross'`：十字准星指示器。其实是种简写，表示启用两个正交的轴的 axisPointer。
 
 
 ##${prefix} axis(string) = 'auto'
@@ -196,13 +190,11 @@
 
 提示框浮层的位置，默认不设置时位置会跟随鼠标的位置。
 
-可选：
+**可选：**
 
-+ `Array`
++ `Array`：通过数组表示提示框浮层的位置，支持数字设置绝对位置，百分比设置相对位置。
 
-    通过数组表示提示框浮层的位置，支持数字设置绝对位置，百分比设置相对位置。
-
-    示例:
+     **例如：** 
 
     ```js
     // 绝对位置，相对于容器左侧 10px, 上侧 10 px
@@ -211,9 +203,7 @@
     position: ['50%', '50%']
     ```
 
-+ `Function`
-
-    回调函数，格式如下
++ `Function`：回调函数，格式如下
     ```js
     (point: Array, params: Object|Array.<Object>, dom: HTMLDomElement, rect: Object, size: Object) => Array
     ```
@@ -223,13 +213,13 @@
     params: 同 formatter 的参数相同。<br>
     dom: tooltip 的 dom 对象。<br>
     rect: 只有鼠标在图形上时有效，是一个用`x`, `y`, `width`, `height`四个属性表达的图形包围盒。<br>
-    size: 包括 dom 的尺寸和 echarts 容器的当前尺寸，例如：`{contentSize: [width, height], viewSize: [width, height]}`。<br>
+    size: 包括 dom 的尺寸和 ECharts 容器的当前尺寸，例如：`{contentSize: [width, height], viewSize: [width, height]}`。<br>
 
     **返回值：**<br>
     可以是一个表示 tooltip 位置的数组，数组值可以是绝对的像素值，也可以是相  百分比。<br>
     也可以是一个对象，如：`{left: 10, top: 30}`，或者 `{right: '20%', bottom: 40}`。<br>
 
-    如下示例：
+     **例如：** 
     ```js
     position: function (point, params, dom, rect, size) {
         // 固定在顶部
@@ -247,25 +237,15 @@
     ```
 
 
-+ `'inside'`
++ `'inside'`：鼠标所在图形的内部中心位置，只在 [trigger](~tooltip.trigger) 为`'item'`的时候有效。
 
-    鼠标所在图形的内部中心位置，只在 [trigger](~tooltip.trigger) 为`'item'`的时候有效。
++ `'top'`：鼠标所在图形上侧，只在 [trigger](~tooltip.trigger) 为`'item'`的时候有效。
 
-+ `'top'`
++ `'left'`：鼠标所在图形左侧，只在 [trigger](~tooltip.trigger) 为`'item'`的时候有效。
 
-    鼠标所在图形上侧，只在 [trigger](~tooltip.trigger) 为`'item'`的时候有效。
++ `'right'`：鼠标所在图形右侧，只在 [trigger](~tooltip.trigger) 为`'item'`的时候有效。
 
-+ `'left'`
-
-    鼠标所在图形左侧，只在 [trigger](~tooltip.trigger) 为`'item'`的时候有效。
-
-+ `'right'`
-
-    鼠标所在图形右侧，只在 [trigger](~tooltip.trigger) 为`'item'`的时候有效。
-
-+ `'bottom'`
-
-    鼠标所在图形底侧，只在 [trigger](~tooltip.trigger) 为`'item'`的时候有效。
++ `'bottom'`：鼠标所在图形底侧，只在 [trigger](~tooltip.trigger) 为`'item'`的时候有效。
 
 
 #${prefix} formatter(string|Function)
@@ -291,7 +271,7 @@
 
 更多其它图表模板变量的含义可以见相应的图表的 label.formatter 配置项。
 
-**示例：**
+ **例如：** 
 ```js
 formatter: '{b0}: {c0}<br />{b1}: {c1}'
 ```
@@ -322,7 +302,7 @@ formatter: '{b0}: {c0}<br />{b1}: {c1}'
 第二个参数 `ticket` 是异步回调标识，配合第三个参数 `callback` 使用。
 第三个参数 `callback` 是异步回调，在提示框浮层内容是异步获取的时候，可以通过 callback 传入上述的 `ticket` 和 `html` 更新提示框浮层内容。
 
-示例：
+ **例如：** 
 ```js
 formatter: function (params, ticket, callback) {
     $.get('detail?name=' + params.name, function (content) {

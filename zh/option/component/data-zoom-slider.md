@@ -17,7 +17,7 @@
 
 ## show(boolean) = true
 
-是否显示 ${dataZoomName} 组件。如果设置为 `false`，不会显示，但是数据过滤的功能还存在。
+是否显示 ${dataZoomName} 组件。默认显示。如果设置为 `false`，则不会显示，但是数据过滤的功能还存在。
 
 
 ## backgroundColor(Color) = 'rgba(47,69,84,0)'
@@ -113,12 +113,12 @@ labelFormatter: function (value) {
 
 ## showDetail(boolean) = true
 
-是否显示detail，即拖拽时候显示详细数值信息。
+是否显示 detail，即拖拽时候显示详细数值信息。
 
 
 ## showDataShadow(string) = 'auto'
 
-是否在 `dataZoom-silder` 组件中显示数据阴影。数据阴影可以简单地反应数据走势。
+是否在 `dataZoom-silder` 组件中显示数据阴影。默认显示。数据阴影可以简单地反应数据走势。
 
 
 ## realtime(boolean) = true

@@ -4,7 +4,7 @@
 
 地理坐标系组件。
 
-地理坐标系组件用于地图的绘制，支持在地理坐标系上绘制[散点图](~series-scatter)，[线集](~series-lines)。
+地理坐标系组件用于地图的绘制，支持在地理坐标系上绘制[散点图](~series-scatter)、[线集](~series-lines)。
 
 `3.1.10` 开始 geo 组件也支持鼠标事件。事件参数为
 ```js
@@ -26,7 +26,7 @@ geo 区域的颜色也可以被 map series 所控制，参见 [series-map.geoInd
 
 ## show(boolean) = true
 
-是否显示地理坐标系组件。
+是否显示地理坐标系组件。默认显示。
 
 {{ use: geo-common(
     prefix='#',
@@ -38,7 +38,7 @@ geo 区域的颜色也可以被 map series 所控制，参见 [series-map.geoInd
 ## regions(Array)
 在地图中对特定的区域配置样式。
 
-例如：
+**例如：**
 ```js
 regions: [{
     name: '广东',

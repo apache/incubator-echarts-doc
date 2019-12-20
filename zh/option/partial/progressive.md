@@ -15,8 +15,10 @@
 
 {{ if: ${supportProgressiveChunkMode} }}
 #${prefix} progressiveChunkMode(string) = ${defaultProgressiveChunkMode|default('sequential')}
-分片的方式。可选值：
-+ `'sequential'`: 按照数据的顺序分片。缺点是渲染过程不自然。
-+ `'mod'`: 取模分片，即每个片段中的点会遍布于整个数据，从而能够视觉上均匀得渲染。
+分片的方式。
+
+**可选：**
++ `'sequential'`：按照数据的顺序分片。缺点是渲染过程不自然。
++ `'mod'`：取模分片，即每个片段中的点会遍布于整个数据，从而能够视觉上均匀得渲染。
 
 {{ /if }}

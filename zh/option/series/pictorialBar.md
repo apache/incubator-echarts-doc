@@ -201,7 +201,7 @@
 
 {{ use: partial-icon }}
 
-例子：
+**例如：**
 ~[800x400](${galleryViewPath}doc-example/pictorialBar-graphicType&reset=1&edit=1)
 
 {{ use: pictorialBar-symbol-attrs-cascade(attrName='symbol') }}
@@ -217,7 +217,7 @@
 
 当设置为百分比时，图形的大小是基于 [基准柱](~series-pictorialBar) 的尺寸计算出来的。
 
-例如，当基准柱基于 x 轴（即柱子是纵向的），[symbolSize](~series-pictorialBar.symbolSize) 设置为 `['30%', '50%']`，那么最终图形的尺寸是：
+**例如：**当基准柱基于 x 轴（即柱子是纵向的），[symbolSize](~series-pictorialBar.symbolSize) 设置为 `['30%', '50%']`，那么最终图形的尺寸是：
 
 + 宽度：`基准柱的宽度 * 30%`。
 + 高度：
@@ -226,7 +226,7 @@
 
 基准柱基于 y 轴（即柱子是横向的）的情况类似对调可得出。
 
-例子：
+**例如：**
 ~[800x600](${galleryViewPath}doc-example/pictorialBar-symbolSize&reset=1&edit=1)
 
 {{ use: pictorialBar-symbol-attrs-cascade(attrName='symbolSize') }}
@@ -240,7 +240,7 @@
 + `'end'`：图形边缘与柱子结束的地方内切。
 + `'center'`：图形在柱子里居中。
 
-例子：
+**例如：**
 ~[800x600](${galleryViewPath}doc-example/pictorialBar-position&reset=1&edit=1)
 
 {{ use: pictorialBar-symbol-attrs-cascade(attrName='symbolPosition') }}
@@ -256,7 +256,7 @@
 
 例如 `[0, '-50%']` 就是把图形向上移动了自身尺寸的一半的位置。
 
-例子：
+**例如：**
 ~[800x600](${galleryViewPath}doc-example/pictorialBar-position&reset=1&edit=1)
 
 {{ use: pictorialBar-symbol-attrs-cascade(attrName='symbolOffset') }}
@@ -266,7 +266,7 @@
 
 图形的旋转角度。
 
-注意，`symbolRotate` 并不会影响图形的定位（哪怕超出基准柱的边界），而只是单纯得绕自身中心旋转。
+**注意：**`symbolRotate` 并不会影响图形的定位（哪怕超出基准柱的边界），而只是单纯得绕自身中心旋转。
 
 {{ use: pictorialBar-symbol-attrs-cascade(attrName='symbolRotate') }}
 
@@ -280,7 +280,7 @@
 + a number：使图形元素重复，即每个数据值用一组重复的图形元素表示。重复的次数是给定的定值。
 + `'fixed'`：使图形元素重复，即每个数据值用一组重复的图形元素表示。重复的次数依据 [symbolBoundingData](~series-pictorialBar.symbolBoundingData) 计算得到，即与 [data](~series-pictorialBar.data) 无关。这在此图形被用于做背景时有用。
 
-例子：
+**例如：**
 ~[800x400](${galleryViewPath}doc-example/pictorialBar-repeat&reset=1&edit=1)
 
 {{ use: pictorialBar-symbol-attrs-cascade(attrName='symbolRepeat') }}
@@ -296,7 +296,7 @@
 
 这个属性的值可以是：`'start'` 或 `'end'`。
 
-例子：
+**例如：**
 ~[800x400](${galleryViewPath}doc-example/pictorialBar-repeatDirection&reset=1&edit=1)
 
 {{ use: pictorialBar-symbol-attrs-cascade(attrName='symbolRepeatDirection') }}
@@ -310,14 +310,14 @@
 
 可以在其值结尾处加一个 `"!"`，如 `"30%!"` 或 `25!`，表示第一个图形的开始和最后一个图形结尾留白，不紧贴边界。默认会紧贴边界。
 
-注意：
+**注意：**
 
 + 当 [symbolRepeat](~series-pictorialBar.symbolRepeat) 为 `true`/`'fixed'` 的时候：
     这里设置的 `symbolMargin` 只是个参考值，真正最后的图形间隔，是根据 [symbolRepeat](~series-pictorialBar.symbolRepeat)、`symbolMargin`、[symbolBoundingData](~series-pictorialBar.symbolBoundingData) 综合计算得到。
 + 当 [symbolRepeat](~series-pictorialBar.symbolRepeat) 为一个固定数值的时候：
     这里设置的 `symbolMargin` 无效。
 
-例子：
+**例如：**
 ~[800x600](${galleryViewPath}doc-example/pictorialBar-repeatLayout&reset=1&edit=1)
 
 {{ use: pictorialBar-symbol-attrs-cascade(attrName='symbolMargin') }}
@@ -332,7 +332,7 @@
 
 `symbolClip` 常在这种场景下使用：同时表达『总值』和『当前数值』。在这种场景下，可以使用两个系列，一个系列是完整的图形，当做『背景』来表达总数值，另一个系列是使用 `symbolClip` 进行剪裁过的图形，表达当前数值。
 
-例子：
+**例如：**
 ~[800x600](${galleryViewPath}doc-example/pictorialBar-clip&reset=1&edit=1)
 
 在这个例子中：
@@ -366,20 +366,20 @@
 
     使用一个系列表达『总值』，另一个系列表达『当前值』的时候，需要两个系列画出的图形一样大。那么就把两个系列的 `symbolBoundingData` 设为一样大。
 
-例子：
+**例如：**
 ~[800x600](${galleryViewPath}doc-example/pictorialBar-clip&reset=1&edit=1)
 
 + 使用了 [symbolRepeat](~series-pictorialBar.symbolRepeat) 时：
 
     如果需要不同柱子中的图形的间隔保持一致，那么可以把 `symbolBoundingData` 设为一致的数值。当然，不设置 `symbolBoundingData` 也是可以的，因为其缺省值就是一个定值（坐标系所显示出的最值）。
 
-例子：
+**例如：**
 ~[800x600](${galleryViewPath}doc-example/pictorialBar-repeatLayout&reset=1&edit=1)
 
 <br>
 `symbolBoundingData` 可以是一个数组，例如 `[-40, 60]`，表示同时指定了正值的 `symbolBoundingData` 和负值的 `symbolBoundingData`。
 
-参见例子：
+**例如：**
 ~[800x400](${galleryViewPath}doc-example/pictorialBar-symbolBoundingDataArray&reset=1&edit=1)
 
 
@@ -389,6 +389,8 @@
 #${prefix} symbolPatternSize(number) = 400
 
 可以使用图片作为图形的 pattern。
+
+**例如：**
 
 ```js
 var textureImg = new Image();
@@ -406,7 +408,7 @@ itemStyle: {
 
 这时候，`symbolPatternSize` 指定了 pattern 的缩放尺寸。比如 `symbolPatternSize` 为 400 时表示图片显示为 `400px * 400px` 的尺寸。
 
-例子：
+**例如：**
 ~[800x400](${galleryViewPath}doc-example/pictorialBar-patternSize&reset=1&edit=1)
 
 {{ use: pictorialBar-symbol-attrs-cascade(attrName='symbolPatternSize') }}

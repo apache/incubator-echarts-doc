@@ -11,24 +11,24 @@ ${name}标记的图形。
 ```js
 (value: Array|number, params: Object) => string
 ```
-其中第一个参数 `value` 为 [data](~series-${seriesType}.data) 中的数据值。第二个参数`params` 是其它的数据项参数。
+其中第一个参数 `value` 为 [data](~series-${seriesType}.data) 中的数据值。第二个参数 `params` 是其它的数据项参数。
 {{ /if }}
 
 #${prefix} symbolSize(number|Array{{ if: ${hasCallback} }}|Function{{ /if}}) = ${defaultSymbolSize}
 
-${name}标记的大小，可以设置成诸如 `10` 这样单一的数字，也可以用数组分开表示宽和高，例如 `[20, 10]` 表示标记宽为`20`，高为`10`。
+${name}标记的大小，可以设置成诸如 `10` 这样单一的数字，也可以用数组分开表示宽和高，例如 `[20, 10]` 表示标记宽为 `20`，高为 `10`。
 
 {{ if: ${hasCallback} }}
 如果需要每个数据的图形大小不一样，可以设置为如下格式的回调函数：
 ```js
 (value: Array|number, params: Object) => number|Array
 ```
-其中第一个参数 `value` 为 [data](~series-${seriesType}.data) 中的数据值。第二个参数`params` 是其它的数据项参数。
+其中第一个参数 `value` 为 [data](~series-${seriesType}.data) 中的数据值。第二个参数 `params` 是其它的数据项参数。
 {{ /if }}
 
 #${prefix} symbolRotate(number)
 
-${name}标记的旋转角度。注意在 `markLine` 中当 `symbol` 为 `'arrow'` 时会忽略 `symbolRotate` 强制设置为切线的角度。
+${name}标记的旋转角度。**注意:**在 `markLine` 中当 `symbol` 为 `'arrow'` 时会忽略 `symbolRotate` 强制设置为切线的角度。
 
 #${prefix} symbolKeepAspect(boolean) = false
 

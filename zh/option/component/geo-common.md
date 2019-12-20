@@ -4,8 +4,6 @@
 
 地图类型。
 
-ECharts 3 中因为地图精度的提高，不再内置地图数据增大代码体积，你可以在[地图下载界面](http://ecomfe.github.io/echarts-builder-web/map3.html)下载到需要的地图文件引入并注册到 ECharts 中。
-
 ECharts 中提供了两种格式的地图数据，一种是可以直接 script 标签引入的 js 文件，引入后会自动注册地图名字和数据。还有一种是 JSON 文件，需要通过 AJAX 异步加载后手动注册。
 
 下面是两种类型的使用示例：
@@ -49,7 +47,7 @@ ECharts 使用 [geoJSON](http://geojson.org/) 格式的数据作为地图的轮�
 #${prefix} center(Array)
 当前视角的中心点，用经纬度表示
 
-例如：
+**例如：**
 ```js
 center: [115.97, 29.71]
 ```

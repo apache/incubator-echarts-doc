@@ -37,7 +37,7 @@ group 是唯一的可以有子节点的容器。group 可以用来整体定位�
 
 在 [自定义系列](~series-custom) 中，当 `diffChildrenByName: true` 时，对于 [renderItem](~series-custom.renderItem) 返回值中的每一个 [group](~${optionPath}.${hostName}${symbolVisit}group)，会根据其 [children](~${optionPath}.${hostName}${symbolVisit}group.children) 中每个图形元素的 [name](~${optionPath}.${hostName}${symbolVisit}polygon.name) 属性进行 "diff"。在这里，"diff" 的意思是，重绘的时候，在已存在的图形元素和新的图形元素之间建立对应关系（依据 `name` 是否相同），从如果数据有更新，能够形成的过渡动画。
 
-但是注意，这会有性能开销。如果数据量较大，不要开启这个功能。
+**注意：**这会有性能开销。如果数据量较大，不要开启这个功能。
 
 
 ##${prefix} children(Array)
@@ -73,7 +73,7 @@ group 是唯一的可以有子节点的容器。group 可以用来整体定位�
 可使用 [SVG PathData](http://www.w3.org/TR/SVG/paths.html#PathData) 做路径。
 可以用来画图标，或者其他各种图形，因为可以很便捷得缩放以适应给定尺寸。
 
-参见例子：
+**例如：**
 [icons](${galleryEditorPath}custom-calendar-icon) 和 [shapes](${galleryEditorPath}custom-gantt-flight)。
 
 关于制定尺寸、拉伸还是平铺，参见 [layout](~${optionPath}.${hostName}${symbolVisit}path.shape.layout)。
@@ -95,13 +95,13 @@ group 是唯一的可以有子节点的容器。group 可以用来整体定位�
 
 即 [SVG PathData](http://www.w3.org/TR/SVG/paths.html#PathData)。
 
-例如：`'M0,0 L0,-20 L30,-20 C42,-20 38,-1 50,-1 L70,-1 L70,0 Z'`。
+**例如：**`'M0,0 L0,-20 L30,-20 C42,-20 38,-1 50,-1 L70,-1 L70,0 Z'`。
 
 如果指定了 [width](~${optionPath}.${hostName}${symbolVisit}path.shape.width)、[height](~${optionPath}.${hostName}${symbolVisit}path.shape.height)、[x](~${optionPath}.${hostName}${symbolVisit}path.shape.x)、[y](~${optionPath}.${hostName}${symbolVisit}path.shape.y)，则会根据他们定义的矩形，缩放 PathData。如果没有指定这些，就不会缩放。
 
 可使用 [layout](~${optionPath}.${hostName}${symbolVisit}path.shape.layout) 指定缩放策略。
 
-参见例子：
+**例如：**
 [icons](${galleryEditorPath}custom-calendar-icon) 和 [shapes](${galleryEditorPath}custom-gantt-flight)。
 
 
@@ -116,7 +116,7 @@ group 是唯一的可以有子节点的容器。group 可以用来整体定位�
 
 `layout` 用于指定缩放策略。
 
-可选值：
+**可选：**
 + `'center'`：保持原来的 PathData 的长宽比，居于矩形中，尽可能撑大但不会超出矩形。
 + `'cover'`：PathData 拉伸为矩形的长宽比，完全填满矩形，不会超出矩形。
 
@@ -272,7 +272,7 @@ group 是唯一的可以有子节点的容器。group 可以用来整体定位�
 
 字体大小、字体类型、粗细、字体样式。格式参见 [css font](https://developer.mozilla.org/en-US/docs/Web/CSS/font)。
 
-例如：
+ **例如：** 
 ```
 // size | family
 font: '2em "STHeiti", sans-serif'
@@ -361,10 +361,11 @@ font: 'bolder 2em "Microsoft YaHei", sans-serif'
 
 ###${prefix} r(Array)
 
-可以用于设置圆角矩形。`r: [r1, r2, r3, r4]`，
-左上、右上、右下、左下角的半径依次为r1、r2、r3、r4。
+可以用于设置圆角矩形。`r: [r1, r2, r3, r4]`，左上、右上、右下、左下角的半径依次为r1、r2、r3、r4。
 
-可以缩写，例如：
+可以缩写。
+
+**例如：**
 + `r` 缩写为 `1`         相当于 `[1, 1, 1, 1]`
 + `r` 缩写为 `[1]`       相当于 `[1, 1, 1, 1]`
 + `r` 缩写为 `[1, 2]`    相当于 `[1, 2, 1, 2]`
@@ -1077,10 +1078,10 @@ setOption 时指定本次对该图形元素的操作行为。
 
 决定此图形元素在定位时，对自身的包围盒计算方式。
 
-参见例子：
+**例如：**
 ~[500x500](${galleryViewPath}doc-example/graphic-bounding&edit=1&reset=1)
 
-可取值：
+**可选：**
 
 + `'all'`：（默认）
     表示用自身以及子节点整体的经过 transform 后的包围盒进行定位。
@@ -1098,7 +1099,8 @@ z 方向的高度，决定层叠关系。
 
 ##${prefix} zlevel(number) = 0
 
-决定此元素绘制在哪个 canvas 层中。注意，越多 canvas 层会占用越多资源。
+决定此元素绘制在哪个 canvas 层中。
+**注意：**越多 canvas 层会占用越多资源。
 
 {{ /if }}
 
@@ -1119,7 +1121,9 @@ z 方向的高度，决定层叠关系。
 
 ##${prefix} info
 
-用户定义的任意数据，可以在 event listener 中访问，如：
+用户定义的任意数据，可以在 event listener 中访问，
+
+**例如：**
 
 ```js
 chart.on('click', function (params) {
@@ -1164,7 +1168,7 @@ chart.on('click', function (params) {
 
 注：关于图形元素中更多的样式设置（例如 [富文本标签](http://echarts.baidu.com/tutorial.html#%E5%AF%8C%E6%96%87%E6%9C%AC%E6%A0%87%E7%AD%BE)），参见 [zrender/graphic/Displayable](https://ecomfe.github.io/zrender-doc/public/api.html#zrenderdisplayable) 中的 style 相关属性。
 
-注意，这里图形元素的样式属性名称直接源于 zrender，和 `echarts label`、`echarts itemStyle` 等处同样含义的样式属性名称或有不同。例如，有如下对应：
+**注意：**这里图形元素的样式属性名称直接源于 zrender，和 `echarts label`、`echarts itemStyle` 等处同样含义的样式属性名称或有不同。例如，有如下对应：
 
 + [itemStyle.color](~series-scatter.label.color) => `style.fill`
 + [itemStyle.borderColor](~series-scatter.label.color) => `style.stroke`
@@ -1237,7 +1241,7 @@ chart.on('click', function (params) {
 
 描述怎么根据父元素进行定位。
 
-『父元素』是指：如果是顶层元素，父元素是 echarts 图表容器。如果是 `group` 的子元素，父元素就是 `group` 元素。
+『父元素』是指：如果是顶层元素，父元素是 ECharts 图表容器。如果是 `group` 的子元素，父元素就是 `group` 元素。
 
 值的类型可以是：
 
@@ -1443,7 +1447,7 @@ chart.on('click', function (params) {
 
 其中，[origin](~${optionPath}.${hostName}${symbolVisit}polygon.origin) 指定了旋转和缩放的中心点，默认值是 `[0, 0]`。
 
-注意：
+**注意：**
 + transform 中设定的坐标，都是相对于图形元素的父元素的（即 [group](~${optionPath}.${hostName}${symbolVisit}group) 元素或者顶层画布）的 `[0, 0]` 点。也就是说，我们可以使用 [group](~${optionPath}.${hostName}${symbolVisit}group) 来组织多个图形元素，并且 [group](~${optionPath}.${hostName}${symbolVisit}group) 可以嵌套。
 + 对于一个图形元素，`transform` 执行的顺序是：先缩放（scale），再旋转（rotation），再平移（position）。
 

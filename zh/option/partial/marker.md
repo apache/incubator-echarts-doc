@@ -33,7 +33,7 @@
 + 如果 coord 值为 `number`，则表示 [axis.data](~xAxis.data) 的 index。
 + 如果 coord 值为 `string`，则表示 [axis.data](~xAxis.data) 中具体的值。注意使用这种方式时，xAxis.data 不能写成 [number, number, ...]，而只能写成 [string, string, ...]，否则不能被 markPoint / markLine 用『具体值』索引到。
 
-例如：
+ **例如：** 
 ```javascript
 {
     xAxis: {

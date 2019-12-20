@@ -16,7 +16,7 @@
 + [框选型数据区域缩放组件（dataZoomSelect）](~toolbox.feature.dataZoom)：提供一个选框进行数据区域缩放。即 [toolbox.feature.dataZoom](~toolbox.feature.dataZoom)，配置项在 `toolbox` 中。
 
 
-如下例子：
+**例如：**
 ~[600x400](${galleryViewPath}doc-example/scatter-dataZoom-all&edit=1&reset=1)
 
 <br>
@@ -57,7 +57,9 @@
 
 + 绝对数值形式：即设置 [dataZoom.startValue](~dataZoom.startValue) 和 [dataZoom.endValue](~dataZoom.endValue)。
 
-注意：当使用百分比形式指定 `dataZoom` 范围时，且处于如下场景（或类似场景）中，`dataZoom` 的结果是和 `dataZoom` 组件的定义顺序相关的。
+**注意：**当使用百分比形式指定 `dataZoom` 范围时，且处于如下场景（或类似场景）中，`dataZoom` 的结果是和 `dataZoom` 组件的定义顺序相关的。
+
+**例如：**
 
 ```javascript
 option = {
@@ -237,7 +239,7 @@ option: {
 
 [${dataZoomName}.startValue](~${dataZoomName}.startValue) 和 [${dataZoomName}.endValue](~${dataZoomName}.endValue) 共同用 **绝对数值** 的形式定义了数据窗口范围。
 
-注意，如果轴的类型为 `category`，则 `startValue` 既可以设置为 `axis.data` 数组的 `index`，也可以设置为数组值本身。
+**注意:**如果轴的类型为 `category`，则 `startValue` 既可以设置为 `axis.data` 数组的 `index`，也可以设置为数组值本身。
 但是如果设置为数组值本身，会在内部自动转化为数组的 index。
 
 关于坐标轴范围（axis extent）和 `${dataZoomName}.startValue` 的关系的更多信息，请参见：[${dataZoomName}.rangeMode](~${dataZoomName}.rangeMode)。
@@ -249,7 +251,7 @@ option: {
 
 [${dataZoomName}.startValue](~${dataZoomName}.startValue) 和 [${dataZoomName}.endValue](~${dataZoomName}.endValue) 共同用 **绝对数值** 的形式定义了数据窗口范围。
 
-注意，如果轴的类型为 `category`，则 `endValue` 即可以设置为 `axis.data` 数组的 `index`，也可以设置为数组值本身。
+**注意:**如果轴的类型为 `category`，则 `endValue` 即可以设置为 `axis.data` 数组的 `index`，也可以设置为数组值本身。
 但是如果设置为数组值本身，会在内部自动转化为数组的 index。
 
 关于坐标轴范围（axis extent）和 `${dataZoomName}.endValue` 的关系的更多信息，请参见：[${dataZoomName}.rangeMode](~${dataZoomName}.rangeMode)。
@@ -285,7 +287,7 @@ option: {
 
 布局方式是横还是竖。不仅是布局方式，对于直角坐标系而言，也决定了，缺省情况控制横向数轴还是纵向数轴。
 
-可选值为：
+**可选：**
 
 + `'horizontal'`：水平。
 
@@ -327,7 +329,7 @@ option: {
 
 {{target: partial-data-zoom-filterMode}}
 
-可选值为：
+**可选：**
 
 + 'filter'：当前数据窗口外的数据，被 **过滤掉**。即 **会** 影响其他轴的数据范围。每个数据项，只要有一个维度在数据窗口外，整个数据项就会被过滤掉。
 
@@ -347,7 +349,7 @@ option: {
 
     + 如果 X 轴为主，Y 轴为辅，比如在『柱状图』中，需要『拖动 `dataZoomX` 改变 X 轴过滤柱子时，Y 轴的范围也自适应剩余柱子的高度』，『拖动 `dataZoomY` 改变 Y 轴过滤柱子时，X 轴范围不受影响』，那么就 X轴设为 `fiterMode: 'filter'`，Y 轴设为 `fiterMode: 'empty'`，即主轴 `'filter'`，辅轴 `'empty'`。
 
-下面是个具体例子：
+**例如：**
 
 ```javascript
 option = {

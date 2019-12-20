@@ -7,7 +7,7 @@
 
 **注意：** ECharts 2.x 中 `force` 类型的图表不再在 ECharts 3 中提供支持，转为统一使用 `graph` 去展现关系数据。如果要使用力引导布局，可以将 [layout](~series-graph.layout) 配置项设为`'force'`。
 
-**示例：**
+ **例如：** 
 
 ~[600x400](${galleryViewPath}graph&reset=1&edit=1)
 
@@ -71,7 +71,9 @@
 ### edgeLength(Array|number) = 30
 边的两个节点之间的距离，这个距离也会受 [repulsion](~series-graph.force.repulsion)。
 
-支持设置成数组表达边长的范围，此时不同大小的值会线性映射到不同的长度。值越小则长度越长。如下示例
+支持设置成数组表达边长的范围，此时不同大小的值会线性映射到不同的长度。值越小则长度越长。
+
+ **例如：** 
 
 ```js
 // 值最大的边长度会趋向于 10，值最小的边长度会趋向于 50
@@ -202,6 +204,7 @@ edgeSymbol: ['circle', 'arrow']
 
 关系图的节点数据列表。
 
+ **例如：** 
 ```js
 data: [{
     name: '1',
@@ -271,7 +274,9 @@ data: [{
 别名，同 [data](~series-graph.data)
 
 ## links(Array)
-节点间的关系数据。示例：
+节点间的关系数据。
+
+ **例如：** 
 ```js
 links: [{
     source: 'n1',
@@ -353,10 +358,12 @@ links: [{
 #${prefix} show(boolean) = ${defaultShowLabel|default(false)}
 是否显示标签。
 #${prefix} position(string) = 'middle'
-标签位置，可选：
-+ `'start'` 线的起始点。
-+ `'middle'` 线的中点。
-+ `'end'`   线的结束点。
+标签位置。
+
+**可选：**
++ `'start'`：线的起始点。
++ `'middle'`：线的中点。
++ `'end'`：的结束点。
 #${prefix} formatter(string|Function)
 {{ use: partial-2d-data-label-formatter }}
 

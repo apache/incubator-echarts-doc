@@ -4,7 +4,7 @@
 
 #${prefix} triggerEvent(boolean) = false
 
-坐标轴的标签是否响应和触发鼠标事件，默认不响应。
+坐标轴的标签是否响应和触发鼠标事件。默认不响应。
 
 事件参数如下：
 
@@ -30,18 +30,18 @@
 X 轴或者 Y 轴的轴线是否在另一个轴的 0 刻度上，只有在另一个轴为数值轴且包含 0 刻度时有效。
 
 ##${prefix} onZeroAxisIndex(number)
-当有双轴时，可以用这个属性手动指定，在哪个轴的 0 刻度上。
+当有双轴时，可以用这个属性手动指定在哪个轴的 0 刻度上。
 {{ /if }}
 
 ##${prefix} symbol(string|Array) = 'none'
-轴线两边的箭头。可以是字符串，表示两端使用同样的箭头；或者长度为 2 的字符串数组，分别表示两端的箭头。默认不显示箭头，即 `'none'`。两端都显示箭头可以设置为 `'arrow'`，只在末端显示箭头可以设置为 `['none', 'arrow']`。
+轴线两端的图形。可以是字符串表示两端使用同样的图形，例如默认两端不显示图形，即 `'none'`，两端都显示为箭头可以设置为 `'arrow'`。也可以是长度为 2 的字符串数组，分别表示轴线两端的图形，例如只在末端显示箭头可以设置为 `['none', 'arrow']`。
 
 ##${prefix} symbolSize(Array) = [10, 15]
-轴线两边的箭头的大小，第一个数字表示宽度（垂直坐标轴方向），第二个数字表示高度（平行坐标轴方向）。
+轴线两端的图形的大小，第一个数字表示宽度（垂直坐标轴方向），第二个数字表示高度（平行坐标轴方向）。
 
 ##${prefix} symbolOffset(Array|number) = [0, 0]
 
-轴线两边的箭头的偏移，如果是数组，第一个数字表示起始箭头的偏移，第二个数字表示末端箭头的偏移；如果是数字，表示这两个箭头使用同样的偏移。
+轴线两端的图形的偏移，如果是数组，第一个数字表示起始图形的偏移，第二个数字表示末端图形的偏移；如果是数字，表示这两个图形使用同样的偏移。
 
 ##${prefix} lineStyle(Object)
 {{ use: partial-line-style(prefix='##' + ${prefix}, defaultColor="'#333'", defaultWidth=1, defaultType="'solid'", name="坐标轴线") }}
@@ -67,12 +67,12 @@ X 轴或者 Y 轴的轴线是否在另一个轴的 0 刻度上，只有在另一
 
 {{ if: ${hasInside|default(true)} }}
 ##${prefix} inside(boolean) = false
-刻度标签是否朝内，默认朝外。
+刻度标签是否朝内。默认朝外。
 {{ /if }}
 
 {{ if: ${componentType} !== 'angleAxis' }}
 ##${prefix} rotate(number) = 0
-刻度标签旋转的角度，在类目轴的类目标签显示不下的时候可以通过旋转防止标签之间重叠。
+刻度标签旋转的角度。在类目轴的类目标签显示不下的时候可以通过旋转防止标签之间重叠。
 
 旋转的角度从 -90 度到 90 度。
 {{ /if }}
@@ -84,10 +84,21 @@ X 轴或者 Y 轴的轴线是否在另一个轴的 0 刻度上，只有在另一
 {{use: axis-common-formatter-desc}}
 
 ##${prefix} showMinLabel(boolean) = null
-是否显示最小 tick 的 label。可取值 `true`, `false`, `null`。默认自动判定（即如果标签重叠，不会显示最小 tick 的 label）。
+是否显示最小 tick 的 label。默认自动判定（即如果标签重叠，不会显示最小 tick 的 label）。
+
+**可选：** 
++ `true`
++ `false`
++ `null`
 
 ##${prefix} showMaxLabel(boolean) = null
-是否显示最大 tick 的 label。可取值 `true`, `false`, `null`。默认自动判定（即如果标签重叠，不会显示最大 tick 的 label）。
+是否显示最大 tick 的 label。默认自动判定（即如果标签重叠，不会显示最大 tick 的 label）。
+
+**可选：** 
++ `true`
++ `false`
++ `null`
+
 
 {{ use: partial-text-style(
     prefix='#' + ${prefix},
@@ -99,13 +110,15 @@ X 轴或者 Y 轴的轴线是否在另一个轴的 0 刻度上，只有在另一
 <!-- Overwrite color -->
 ##${prefix} color(Color|Function)
 
-刻度标签文字的颜色，默认取 [axisLine.lineStyle.color](~${componentType}.axisLine.lineStyle.color)。支持回调函数，格式如下
+刻度标签文字的颜色。默认取 [axisLine.lineStyle.color](~${componentType}.axisLine.lineStyle.color)。支持回调函数，格式如下：
 
 ```js
 (val: string) => Color
 ```
 
-参数是标签的文本，返回颜色值，如下示例：
+参数是标签的文本，返回颜色值。
+
+**例如：**
 
 ```js
 textStyle: {
@@ -120,7 +133,7 @@ textStyle: {
 #${prefix} axisTick(Object)
 坐标轴刻度相关设置。
 ##${prefix} show(boolean) = ${defaultShow|default(true)}
-是否显示坐标轴刻度。
+是否显示坐标轴刻度。默认显示。
 
 {{ if: ${hasAlignWithLabel|default(true)} }}
 ##${prefix} alignWithLabel(boolean) = false
@@ -139,7 +152,7 @@ textStyle: {
 
 {{ if: ${hasInside|default(true)} }}
 ##${prefix} inside(boolean) = false
-坐标轴刻度是否朝内，默认朝外。
+坐标轴刻度是否朝内。默认朝外。
 {{ /if }}
 
 ##${prefix} length(number) = 5
@@ -149,7 +162,7 @@ textStyle: {
 <!-- Overwrite color -->
 ###${prefix} color(Color)
 
-刻度线的颜色，默认取 [axisLine.lineStyle.color](~${componentType}.axisLine.lineStyle.color)。
+刻度线的颜色。默认取 [axisLine.lineStyle.color](~${componentType}.axisLine.lineStyle.color)。
 
 
 
@@ -160,7 +173,7 @@ textStyle: {
 #${prefix} splitLine(Object)
 坐标轴在 [grid](~grid) 区域中的分隔线。
 ##${prefix} show(boolean) = ${defaultShow|default(true)}
-是否显示分隔线。默认数值轴显示，类目轴不显示。
+是否显示分隔线。默认数值轴显示分割线，类目轴不显示分割线。
 
 {{ if: ${hasLabelInterval|default(true)} }}
 ##${prefix} interval(number|Function) = 'auto'
@@ -175,11 +188,9 @@ textStyle: {
 
 <!-- overwrite color -->
 ###${prefix} color(Array|string) = ['#ccc']
-分隔线颜色，可以设置成单个颜色。
+分隔线颜色。可以设置成单个颜色，也可以设置成颜色数组。分隔线会按数组中颜色的顺序依次循环设置颜色。
 
-也可以设置成颜色数组，分隔线会按数组中颜色的顺序依次循环设置颜色。
-
-示例
+**例如：**
 ```
 splitLine: {
     lineStyle: {
@@ -223,7 +234,7 @@ splitLine: {
 
 坐标轴类型。
 
-可选：
+**可选：**
 + `'value'`
     数值轴，适用于连续数据。
 
@@ -258,7 +269,7 @@ splitLine: {
 <!-- Overwrite color -->
 ##${prefix} color(Color)
 
-坐标轴名称的颜色，默认取 [axisLine.lineStyle.color](~${componentType}.axisLine.lineStyle.color)。
+坐标轴名称的颜色。默认取 [axisLine.lineStyle.color](~${componentType}.axisLine.lineStyle.color)。
 
 
 #${prefix} nameGap(number) = 15
@@ -267,11 +278,11 @@ splitLine: {
 
 #${prefix} nameRotate(number) = null
 
-坐标轴名字旋转，角度值。
+坐标轴名字旋转的角度值。
 
 #${prefix} inverse(boolean) = false
 
-是否是反向坐标轴。ECharts 3 中新加。
+是否是反向坐标轴。
 
 {{/if}}
 
@@ -281,7 +292,8 @@ splitLine: {
 类目轴中 `boundaryGap` 可以配置为 `true` 和 `false`。默认为 `true`，这时候[刻度](~${componentType}.axisTick)只是作为分隔线，标签和数据点都会在两个[刻度](~${componentType}.axisTick)之间的带(band)中间。
 
 非类目轴，包括时间，数值，对数轴，`boundaryGap`是一个两个值的数组，分别表示数据最小值和最大值的延伸范围，可以直接设置数值或者相对的百分比，在设置 [min](~${componentType}.min) 和 [max](~${componentType}.max) 后无效。
-**示例：**
+
+**例如：**
 ```js
 boundaryGap: ['20%', '20%']
 ```
@@ -290,13 +302,13 @@ boundaryGap: ['20%', '20%']
 
 坐标轴刻度最小值。
 
-可以设置成特殊值 `'dataMin'`，此时取数据在该轴上的最小值作为最小刻度。
-
-不设置时会自动计算最小值保证坐标轴刻度的均匀分布。
+可以设置成特殊值 `'dataMin'`，此时取数据在该轴上的最小值作为最小刻度。不设置时会自动计算最小值保证坐标轴刻度的均匀分布。
 
 在类目轴中，也可以设置为类目的序数（如类目轴 `data: ['类A', '类B', '类C']` 中，序数 `2` 表示 `'类C'`。也可以设置为负数，如 `-3`）。
 
-当设置成 `function` 形式时，可以根据计算得出的数据最大最小值设定坐标轴的最小值。如：
+当设置成 `function` 形式时，可以根据计算得出的数据最大最小值设定坐标轴的最小值。
+
+**例如：**
 
 ```
 min: function(value) {
@@ -310,13 +322,13 @@ min: function(value) {
 
 坐标轴刻度最大值。
 
-可以设置成特殊值 `'dataMax'`，此时取数据在该轴上的最大值作为最大刻度。
-
-不设置时会自动计算最大值保证坐标轴刻度的均匀分布。
+可以设置成特殊值 `'dataMax'`，此时取数据在该轴上的最大值作为最大刻度。不设置时会自动计算最大值保证坐标轴刻度的均匀分布。
 
 在类目轴中，也可以设置为类目的序数（如类目轴 `data: ['类A', '类B', '类C']` 中，序数 `2` 表示 `'类C'`。也可以设置为负数，如 `-3`）。
 
-当设置成 `function` 形式时，可以根据计算得出的数据最大最小值设定坐标轴的最小值。如：
+当设置成 `function` 形式时，可以根据计算得出的数据最大最小值设定坐标轴的最小值。
+
+**例如：**
 
 ```
 max: function(value) {
@@ -344,7 +356,7 @@ max: function(value) {
 
 自动计算的坐标轴最小间隔大小。
 
-例如可以设置成`1`保证坐标轴分割刻度显示成整数。
+例如可以设置成 `1` 保证坐标轴分割刻度显示成整数。
 
 ```js
 {
@@ -378,7 +390,7 @@ max: function(value) {
 
 #${prefix} logBase(number) = 10
 
-对数轴的底数，只在对数轴中（[type](~${componentType}.type): 'log'）有效。
+对数轴的底数。只在对数轴中（[type](~${componentType}.type): 'log'）有效。
 
 
 {{ use: partial-axis-common-axis-line(
@@ -414,13 +426,13 @@ max: function(value) {
 
 #${prefix} data(Array)
 
-类目数据，在类目轴（[type](~${componentType}.type): `'category'`）中有效。
+类目数据。在类目轴（[type](~${componentType}.type): `'category'`）中有效。
 
 如果没有设置 [type](~${componentType}.type)，但是设置了 `axis.data`，则认为 `type` 是 `'category'`。
 
 如果设置了 [type](~${componentType}.type) 是 `'category'`，但没有设置 `axis.data`，则 `axis.data` 的内容会自动从 [series.data](~series.data) 中获取，这会比较方便。不过注意，`axis.data` 指明的是 `'category'` 轴的取值范围。如果不指定而是从 [series.data](~series.data) 中获取，那么只能获取到 [series.data](~series.data) 中出现的值。比如说，假如 [series.data](~series.data) 为空时，就什么也获取不到。
 
-示例：
+**例如：**
 
 ```js
 // 所有类目名称列表
@@ -467,9 +479,7 @@ ${name}的显示间隔，在类目轴中有效。{{ if: !${isAxisLabel} }}默认
 
 默认会采用标签不重叠的策略间隔显示标签。
 
-可以设置成 0 强制显示所有标签。
-
-如果设置为 `1`，表示『隔一个标签显示一个标签』，如果值为 `2`，表示隔两个标签显示一个标签，以此类推。
+可以设置成 0 强制显示所有标签。如果设置为 `1`，表示『隔一个标签显示一个标签』，如果值为 `2`，表示隔两个标签显示一个标签，以此类推。
 
 可以用数值表示间隔的数据，也可以通过回调函数控制。回调函数格式如下：
 ```js
@@ -483,7 +493,7 @@ ${name}的显示间隔，在类目轴中有效。{{ if: !${isAxisLabel} }}默认
 
 刻度标签的内容格式器，支持字符串模板和回调函数两种形式。
 
-示例:
+**例如：**
 ```js
 // 使用字符串模板，模板变量为刻度默认标签 {value}
 formatter: '{value} kg'

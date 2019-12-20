@@ -30,7 +30,7 @@ ${name} icon 样式设置。由于 icon 的文本信息只在 icon hover 时候�
 {{ target: feature-common}}
 
 #### show(boolean) = true
-是否显示该工具。
+是否显示该工具。默认显示。
 
 #### title(boolean) = '${title}'
 
@@ -45,9 +45,9 @@ ${name} icon 样式设置。由于 icon 的文本信息只在 icon hover 时候�
 
 # toolbox(Object)
 
-工具栏。内置有[导出图片](~toolbox.feature.saveAsImage)，[数据视图](~toolbox.feature.dataView)，[动态类型切换](~toolbox.feature.magicType)，[数据区域缩放](~toolbox.feature.dataZoom)，[重置](~toolbox.feature.reset)五个工具。
+工具栏。内置有[导出图片](~toolbox.feature.saveAsImage)、[数据视图](~toolbox.feature.dataView)、[动态类型切换](~toolbox.feature.magicType)、[数据区域缩放](~toolbox.feature.dataZoom)、[重置](~toolbox.feature.reset)五个工具。
 
-**如下示例：**
+**例如：**
 
 ~[600x400](${galleryViewPath}line-marker&reset=1&edit=1)
 
@@ -55,13 +55,13 @@ ${name} icon 样式设置。由于 icon 的文本信息只在 icon hover 时候�
 
 ## show(boolean) = true
 
-是否显示工具栏组件。
+是否显示工具栏组件。默认显示。
 
 ## orient(string) = 'horizontal'
 
 工具栏 icon 的布局朝向。
 
-可选：
+**可选：**
 + 'horizontal'
 + 'vertical'
 
@@ -75,14 +75,15 @@ ${name} icon 样式设置。由于 icon 的文本信息只在 icon hover 时候�
 
 ## showTitle(boolean) = true
 
-是否在鼠标 hover 的时候显示每个工具 icon 的标题。
+是否在鼠标 hover 的时候显示每个工具 icon 的标题。默认显示。
 
 ## feature(Object)
 各工具配置项。
 
 除了各个内置的工具按钮外，还可以自定义工具按钮。
 
-注意，自定义的工具名字，只能以 `my` 开头，例如下例中的 `myTool1`，`myTool2`：
+**注意：**自定义的工具名字，只能以 `my` 开头，如 `myTool1`，`myTool2`。
+**例如：**
 
 ```javascript
 {
@@ -116,7 +117,7 @@ ${name} icon 样式设置。由于 icon 的文本信息只在 icon hover 时候�
 #### name(string)
 保存的文件名称，默认使用 [title.text](~title.text) 作为名称。
 #### backgroundColor(Color) = 'auto'
-保存的图片背景色，默认使用 [backgroundColor](~backgroundColor)，如果`backgroundColor`不存在的话会取白色。
+保存的图片背景色，默认使用 [backgroundColor](~backgroundColor)，如果 `backgroundColor` 不存在的话会取白色。
 #### connectedBackgroundColor(Color) = '#fff'
 如果图表使用了 [echarts.connect](api.html#echarts.connect) 对多个图表进行联动，则在导出图片时会导出这些联动的图表。该配置项决定了图表与图表之间间隙处的填充色。
 #### excludeComponents(Array) = ['toolbox']
@@ -206,8 +207,9 @@ optionToContent: function(opt) {
 
 
 ### magicType(Object)
-动态类型切换
-**示例：**
+动态类型切换。
+
+**例如：**
 ```js
 feature: {
     magicType: {
@@ -216,9 +218,9 @@ feature: {
 }
 ```
 #### show(boolean) = true
-是否显示该动态类型切换。
+是否显示该动态类型切换。默认显示。
 #### type(Array)
-启用的动态类型，包括`'line'`（切换为折线图）, `'bar'`（切换为柱状图）, `'stack'`（切换为堆叠模式）, `'tiled'`（切换为平铺模式）。
+启用的动态类型，包括`'line'`（切换为折线图）、 `'bar'`（切换为柱状图）、 `'stack'`（切换为堆叠模式）、 `'tiled'`（切换为平铺模式）。
 {{ use: feature-common(title="动态类型切换") }}
 #### icon(Object)
 各个类型的 icon path，可以分别配置。
@@ -256,13 +258,15 @@ feature: {
 也可以不在这里指定，而是在 [brush.toolbox](~brush.toolbox) 中指定。
 
 #### type(Array)
-使用的按钮，取值：
+使用的按钮。
+
+**可选：**
 
 + `'rect'`：开启矩形选框选择功能。
 + `'polygon'`：开启任意形状选框选择功能。
 + `'lineX'`：开启横向选择功能。
 + `'lineY'`：开启纵向选择功能。
-+ `'keep'`：切换『单选』和『多选』模式。后者可支持同时画多个选框。前者支持单击清除所有选框。
++ `'keep'`：切换单选和多选模式。后者可支持同时画多个选框。前者支持单击清除所有选框。
 + `'clear'`：清空所有选框。
 
 
@@ -297,7 +301,9 @@ feature: {
 
 ## tooltip(Object)
 
-工具箱的 tooltip 配置，配置项同 [tooltip](~tooltip)。默认不显示，可以在需要特殊定制文字样式（尤其是想用自定义 CSS 控制文字样式）的时候开启 tooltip，如下示例：
+工具箱的 tooltip 配置，配置项同 [tooltip](~tooltip)。默认不显示，可以在需要特殊定制文字样式（尤其是想用自定义 CSS 控制文字样式）的时候开启 tooltip。
+
+**例如：**
 
 ```js
 option = {

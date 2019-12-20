@@ -21,7 +21,7 @@
 
 ---
 
-> **注意：**
+> **注意:**
 > 一般来说，axisPointer 的具体配置项会配置在各个轴中（如 [xAxis.axisPointer](~xAxis.axisPointer)）或者 `tooltip` 中（如 [tooltip.axisPointer](~tooltip.axisPointer)）。
 
 > 但是这几个选项只能配置在全局的 axisPointer 中：[axisPointer.triggerOn](~axisPointer.triggerOn)、[axisPointer.link](~axisPointer.link)。
@@ -87,13 +87,13 @@ axisPointer 的 label 默认不显示（也就是默认只显示指示线），�
 
 指示器类型。
 
-可选
+**可选：**
 
-+ `'line'` 直线指示器
++ `'line'`：直线指示器。
 
-+ `'shadow'` 阴影指示器
++ `'shadow'`：阴影指示器。
 
-+ `'none'` 无指示器
++ `'none'`：无指示器。
 
 {{ use: partial-axisPointer-tooltip-shared(
     prefix=${prefix},
@@ -135,7 +135,8 @@ axisPointer 的 label 默认不显示（也就是默认只显示指示线），�
 
 ##${prefix} margin(number) = 50
 
-手柄与轴的距离。注意，这是手柄中心点和轴的距离。
+手柄与轴的距离。
+**注意:**这是手柄中心点和轴的距离。
 
 ##${prefix} color(string) = '#333'
 

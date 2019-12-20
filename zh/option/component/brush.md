@@ -252,7 +252,7 @@ brush 选框的 z-index。当有和不想管组件有不正确的重叠时，可
 
 **全局 brush**
 
-在 echarts 实例中任意地方刷选。这是默认情况。如果没有指定为『坐标系 brush』，就是『全局 brush』。
+在 ECharts 实例中任意地方刷选。这是默认情况。如果没有指定为『坐标系 brush』，就是『全局 brush』。
 
 **坐标系 brush**
 
@@ -269,7 +269,7 @@ brush 选框的 z-index。当有和不想管组件有不正确的重叠时，可
 + `Array`，如 `[0, 4, 2]`，表示指定这些 index 所对应的坐标系。
 + `'none'` 或 `null` 或 `undefined`，表示不指定。
 
-例如：
+**例如：**
 ```javascript
 option = {
     geo: {
@@ -282,7 +282,7 @@ option = {
 };
 ```
 
-例如：
+**例如：**
 ```javascript
 option = {
     grid: [
@@ -321,7 +321,7 @@ option = {
 
 brushLink 是通过 dataIndex 进行映射，所以需要保证，**联动的每个系列的 `data` 都是 `index` 对应的**。*
 
-例如：
+**例如：**
 ```javascript
 option = {
     brush: {

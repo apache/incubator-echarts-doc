@@ -35,7 +35,7 @@
 
 {{use:partial-barGrid-share-desc(seriesType=${seriesType})}}
 
-例子：
+**例如：**
 ~[600x400](${galleryViewPath}doc-example/barGrid-barGap&reset=1&edit=1)
 
 ## barCategoryGap(string) = '20%'

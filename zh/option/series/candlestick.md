@@ -7,7 +7,7 @@
 
 在 ECharts3 中，同时支持 `'candlestick'` 和 `'k'`这两种 `'series.type'`（`'k'` 会被自动转为 `'candlestick'`）。
 
-**示例如下：**
+ **例如：** 
 
 ~[600x400](${galleryViewPath}candlestick-sh&edit=1&reset=1)
 
@@ -50,7 +50,9 @@
 
 ## layout(string) = null
 
-布局方式，可选值：
+布局方式。
+
+**可选：**
 
 + `'horizontal'`：水平排布各个 box。
 

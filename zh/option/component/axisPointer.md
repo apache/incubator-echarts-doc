@@ -28,7 +28,9 @@
 
 联动的效果可以看这两个例子：[例子A](${galleryViewPath}candlestick-brush&edit=1&reset=1)，[例子B](${galleryViewPath}scatter-nutrients-matrix&edit=1&reset=1)。
 
-link 是一个数组，其中每一项表示一个 link group，一个 group 中的坐标轴互相联动。例如：
+link 是一个数组，其中每一项表示一个 link group，一个 group 中的坐标轴互相联动。
+
+**例如：**
 
 ```js
 link: [

@@ -10,7 +10,7 @@
 + `{@xxx}：数据中名为 `'xxx'` 的维度的值，如 `{@product}` 表示名为 `'product'` 的维度的值。
 + `{@[n]}：数据中维度 `n` 的值，如 `{@[3]}` 表示维度 3 的值，从 0 开始计数。
 
-**示例：**
+**例如：**
 ```js
 formatter: '{b}: {@score}'
 ```
@@ -34,7 +34,7 @@ formatter: '{b}: {@score}'
 + 'column'：默认，`dataset` 的列对应于系列，从而 `dataset` 中每一列是一个维度（dimension）。
 + 'row'：`dataset` 的行对应于系列，从而 `dataset` 中每一行是一个维度（dimension）。
 
-参见这个 [示例](http://echarts.baidu.com/examples/editor.html?c=dataset-series-layout-by&theme=lite)
+**查看 [示例]**(http://echarts.baidu.com/examples/editor.html?c=dataset-series-layout-by&theme=lite)
 
 {{ target: partial-datasetIndex }}
 
@@ -48,7 +48,7 @@ formatter: '{b}: {@score}'
 
 系列中的数据内容数组。数组项通常为具体的数据项。
 
-注意，如果系列没有指定 `data`，并且 option 有 [dataset](~dataset)，那么默认使用第一个 [dataset](~dataset)。如果指定了 `data`，则不会再使用 [dataset](~dataset)。
+**注意:**如果系列没有指定 `data`，并且 option 有 [dataset](~dataset)，那么默认使用第一个 [dataset](~dataset)。如果指定了 `data`，则不会再使用 [dataset](~dataset)。
 
 可以使用 `series.datasetIndex` 指定其他的 [dataset](~dataset)。
 

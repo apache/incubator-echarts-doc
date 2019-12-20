@@ -2,7 +2,7 @@
 
 # radar(Object)
 
-雷达图坐标系组件，只适用于[雷达图](~series-radar)。该组件等同 ECharts 2 中的 polar 组件。因为 3 中的 polar 被重构为标准的极坐标组件，为避免混淆，雷达图使用 radar 组件作为其坐标系。
+雷达图坐标系组件，只适用于[雷达图](~series-radar)。
 
 雷达图坐标系与极坐标系不同的是它的每一个轴（indicator 指示器）都是一个单独的维度，可以通过 [name](~radar.name)、[axisLine](~radar.axisLine)、[axisTick](~radar.axisTick)、[axisLabel](~radar.axisLabel)、[splitLine](~radar.splitLine)、 [splitArea](~radar.splitArea) 几个配置项配置指示器坐标轴线的样式。
 
@@ -27,7 +27,7 @@
 
 ### show(boolean) = true
 
-是否显示指示器名称。
+是否显示指示器名称。默认显示。
 
 ### formatter(string|Function)
 
@@ -95,8 +95,9 @@ formatter: function (value, indicator) {
 
 ## indicator(Array)
 
-雷达图的指示器，用来指定雷达图中的多个变量（维度），如下示例。
+雷达图的指示器，用来指定雷达图中的多个变量（维度）。
 
+**例如：**
 ```js
 indicator: [
    { name: '销售（sales）', max: 6500},
@@ -114,7 +115,7 @@ indicator: [
 
 ### max(number)
 
-指示器的最大值，可选，建议设置
+指示器的最大值，可选，建议设置。
 
 ### min(number)
 

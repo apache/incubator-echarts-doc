@@ -23,7 +23,9 @@
 
 ## layout(string) = 'horizontal'
 
-布局方式，可选值为：
+布局方式。
+
+**可选：**
 
 + `'horizontal'`：水平排布各个坐标轴。
 

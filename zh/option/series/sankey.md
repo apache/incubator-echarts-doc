@@ -7,18 +7,19 @@
 
 是一种特殊的流图（可以看作是有向无环图）。 它主要用来表示原材料、能量等如何从最初形式经过中间过程的加工或转化达到最终状态。
 
-**示例：**
+**例如：**
 
 ~[700x580](${galleryViewPath}sankey-energy&edit=1&reset=1)
 
 <br>
 **可视编码：**
 
-桑基图将原数据中的每个`node`编码成一个小矩形，不同的节点尽量用不同的颜色展示，小矩形旁边的`label`编码的是节点的名称。
+桑基图将原数据中的每个 `node` 编码成一个小矩形，不同的节点尽量用不同的颜色展示，小矩形旁边的 `label` 编码的是节点的名称。
 
-此外，图中每两个小矩形之间的边编码的是原数据中的`link`，边的粗细编码的是`link`中的`value`。
+此外，图中每两个小矩形之间的边编码的是原数据中的 `link`，边的粗细编码的是 `link` 中的 `value`。
 
 <br>
+
 **排序：**
 如果想指定结果的纵向顺序，那么可以把 [layoutIterations](~series-sankey.layoutIterations) 设为 `0`，此时纵向的顺序依照数据在 [links](~series-sankey.links) 中出现的顺序。
 
@@ -72,7 +73,7 @@
 
 鼠标 hover 到节点或边上，相邻接的节点和边高亮的交互，默认关闭，可手动开启。
 
-可选值为：
+**可选：**
 
 + `false`：hover 到节点或边时，只有被 hover 的节点或边高亮。
 + `true`：同 `'allEdges'`。
@@ -82,7 +83,9 @@
 
 ## levels(Array)
 
-桑基图每一层的设置。可以逐层设置，如下：
+桑基图每一层的设置。可以逐层设置。
+
+**例如：**
 
 ```js
 levels: [{
@@ -133,7 +136,7 @@ levels: [{
 
 ### lineStyle(Object)
 
-桑基图指定层出边的样式。其中 [lineStyle.color](~series-sankey.lineStyle.color) 支持设置为`'source'`或者`'target'`特殊值，此时出边会自动取源节点或目标节点的颜色作为自己的颜色。
+桑基图指定层出边的样式。其中 [lineStyle.color](~series-sankey.lineStyle.color) 支持设置为 `'source'` 或者 `'target'` 特殊值，此时出边会自动取源节点或目标节点的颜色作为自己的颜色。
 
 {{use: partial-sankey-line-style(prefix="###")}}
 
@@ -162,7 +165,7 @@ levels: [{
 
 ## lineStyle(Object)
 
-桑基图边的样式，其中 [lineStyle.color](~series-sankey.lineStyle.color) 支持设置为`'source'`或者`'target'`特殊值，此时边会自动取源节点或目标节点的颜色作为自己的颜色。
+桑基图边的样式，其中 [lineStyle.color](~series-sankey.lineStyle.color) 支持设置为 `'source'` 或者 `'target'` 特殊值，此时边会自动取源节点或目标节点的颜色作为自己的颜色。
 
 {{use: partial-sankey-line-style(prefix="##")}}
 
@@ -202,7 +205,7 @@ data: [{
 }]
 ```
 
-**注意:** 节点的`name`不能重复。
+**注意:** 节点的 `name` 不能重复。
 
 ### name(string)
 
@@ -247,7 +250,9 @@ data: [{
 
 ## links(Array)
 
-节点间的边。**注意: 桑基图理论上只支持有向无环图（DAG, Directed Acyclic Graph），所以请确保输入的边是无环的.** 示例：
+节点间的边。**注意:** 桑基图理论上只支持有向无环图（DAG, Directed Acyclic Graph），所以请确保输入的边是无环的.
+
+**例如：**
 
 ```js
 links: [{

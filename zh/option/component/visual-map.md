@@ -52,9 +52,9 @@ series: {
 
 
 <br>
-**✦ 与 ECharts2 中 dataRange 的关系 ✦**
+**✦ 与 ECharts 2 中 dataRange 的关系 ✦**
 
-`visualMap` 是由 ECharts2 中的 `dataRange` 组件改名以及扩展而来。ECharts3里 `option` 中的 `dataRange` 配置项仍然被兼容，会自动转换成 `visualMap` 配置项。在option中推荐写 `visualMap` 而非 `dataRange`。
+`visualMap` 是由 ECharts 2 中的 `dataRange` 组件改名以及扩展而来。ECharts 3里 `option` 中的 `dataRange` 配置项仍然被兼容，会自动转换成 `visualMap` 配置项。在option中推荐写 `visualMap` 而非 `dataRange`。
 
 <br>
 **✦ 以下是visualMap各组件的详细介绍 ✦**
@@ -152,7 +152,7 @@ visualMap: [
 
 visual 范围也可以反向，例如上例，可以设定 `opacity` 范围为 `[1, 0.4]`，则上例得到的 opacityValues 为 `[0.7, 0.96, 0.4]`。
 
-注意，[visualMap.min, visualMap.max] 须手动设置，不设置则默认取 [0, 100]，而非 series.data 中的 `dataMin` 和 `dataMax`。
+**注意：**[visualMap.min, visualMap.max] 需手动设置，不设置则默认取 [0, 100]，而非 series.data 中的 `dataMin` 和 `dataMax`。
 
 
 如何设定为线性映射？以下情况时，会设定为 `线性映射`：
@@ -246,7 +246,7 @@ chart.setOption({
 });
 ```
 
-但请注意：
+**注意:**
 
 + ${componentMainType} option 中的这几个属性，`inRange`, `outOfRange`, `target`, `controller`，在 setOption 时不支持 merge。否则会带来过于复杂的 merge 逻辑。也就是说，`setOption` 时，一旦修改了以上几个属性中的一项，其他项也会被清空，而非保留当前状态。所以，设置 visual 值时，请一次性全部设置，而非只设置一部分。
 
@@ -293,7 +293,7 @@ chart.setOption(option); // option设置回 ${componentMainType}
     componentMainType='visualMap'
 )}}
 
-**注意**，inRange 没有指定，则会默认会设置 color: `['#f6efa6', '#d88273', '#bf444c']`，如果你不想要这个color，可以
+**注意:** inRange 没有指定，则会默认会设置 color: `['#f6efa6', '#d88273', '#bf444c']`，如果你不想要这个color，可以
 `inRange: {color: null}` 来去除。
 
 
@@ -422,9 +422,9 @@ visualMap 组件中，`控制器` 的 `inRange` `outOfRange` 设置。如果没�
 
 ## color(Array) = ['#bf444c', '#d88273', '#f6efa6']
 
-这个配置项，是为了兼容 ECharts2 而存在，ECharts3 中已经不推荐使用。它的功能已经移到了 [${visualMapName}.inRange](~${visualMapName}.inRange) 和 [${visualMapName}.outOfRange](~${visualMapName}.outOfRange) 中。
+这个配置项，是为了兼容 ECharts 2 而存在，ECharts 3 中已经不推荐使用。它的功能已经移到了 [${visualMapName}.inRange](~${visualMapName}.inRange) 和 [${visualMapName}.outOfRange](~${visualMapName}.outOfRange) 中。
 
-如果要使用，则须注意，`color`属性中的顺序是由数值 `大` 到 `小`，但是 [${visualMapName}.inRange](~${visualMapName}.inRange) 或 [${visualMapName}.outOfRange](~${visualMapName}.outOfRange) 中 `color` 的顺序，总是由数值 `小` 到 `大`。二者不一致。
+如果要使用，需注意，`color`属性中的顺序是由数值 `大` 到 `小`，但是 [${visualMapName}.inRange](~${visualMapName}.inRange) 或 [${visualMapName}.outOfRange](~${visualMapName}.outOfRange) 中 `color` 的顺序，总是由数值 `小` 到 `大`。二者不一致。
 
 
 ## textStyle(Object)

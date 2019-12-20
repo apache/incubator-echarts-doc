@@ -41,7 +41,7 @@ animationDurationUpdate: function (idx) {
 
 数据更新动画的延迟，支持回调函数，可以通过每个数据返回不同的 delay 时间实现更戏剧的更新动画效果。
 
-如下示例：
+**例如：**
 ```js
 animationDelayUpdate: function (idx) {
     // 越往后的数据延迟越大
@@ -74,7 +74,7 @@ animationDuration: function (idx) {
 
 初始动画的延迟，支持回调函数，可以通过每个数据返回不同的 delay 时间实现更戏剧的初始动画效果。
 
-如下示例：
+**例如：**
 ```js
 animationDelay: function (idx) {
     // 越往后的数据延迟越大

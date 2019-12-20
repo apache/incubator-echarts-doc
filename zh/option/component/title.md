@@ -4,36 +4,35 @@
 
 # title(Object)
 
-标题组件，包含主标题和副标题。
+图表的标题组件，包含主标题和副标题。
 
-在 ECharts 2.x 中单个 ECharts 实例最多只能拥有一个标题组件。但是在 ECharts 3 中可以存在任意多个标题组件，这在需要标题进行排版，或者单个实例中的多个图表都需要标题时会比较有用。
+在 ECharts 中可以使用任意多个标题组件。在需要对标题进行排版，或者单个实例中的多个图表都需要使用标题时都会比较有用。（注意，在 ECharts 2.x 中，单个 ECharts 实例中最多只能有一个标题组件。）
 
-**例如下面不同缓动函数效果的示例，每一个缓动效果图都带有一个标题组件：**
+**例如：**在下面不同缓动函数效果的示例中，每一个缓动效果的图表都带有一个标题组件：
 ~[700x400](${galleryViewPath}line-easing&edit=1&reset=1)
 
 {{use: partial-component-id(prefix="#")}}
 
 ## show(boolean) = true
 
-是否显示标题组件。
+是否显示标题组件。默认为显示，若不想显示标题可将 show 设为 false。
 
 ## text(string) = ''
 
-主标题文本，支持使用 `\n` 换行。
+主标题文本。文本支持使用 `\n` 换行。
 
 ## link(string) = ''
 
-主标题文本超链接。
+主标题文本的超链接。
 
 ## target(string) = 'blank'
 
-指定窗口打开主标题超链接。
+指定在哪个窗口打开主标题文本的超链接。
 
 **可选：**
 
-+ `'self'` 当前窗口打开
-
-+ `'blank'` 新窗口打开
++ `'self'` 使用当前窗口打开链接。
++ `'blank'` 在新窗口中打开链接。
 
 ## textStyle
 
@@ -56,16 +55,17 @@
 
 ## sublink(string) = ''
 
-副标题文本超链接。
+副标题文本的超链接。
 
 
 ## subtarget(string) = 'blank'
 
-指定窗口打开副标题超链接，可选：
+指定在哪个窗口打开副标题文本的超链接。
 
-+ `'self'` 当前窗口打开
+**可选：**
 
-+ `'blank'` 新窗口打开
++ `'self'` 使用当前窗口打开链接。
++ `'blank'` 在新窗口中打开链接。
 
 
 ## subtextStyle
@@ -80,15 +80,19 @@
 
 ## textAlign(string) = 'auto'
 
-整体（包括 text 和 subtext）的水平对齐。
+整体文本（包括 text 和 subtext）水平对齐。
 
-可选值：`'auto'`、`'left'`、`'right'`、`'center'`。
+**可选：**
+
+`'auto'`、`'left'`、`'right'`、`'center'`。
 
 ## textVerticalAlign(string) = 'auto'
 
-整体（包括 text 和 subtext）的垂直对齐。
+整体文本（包括 text 和 subtext）垂直对齐。
 
-可选值：`'auto'`、`'top'`、`'bottom'`、`'middle'`。
+**可选：**
+
+`'auto'`、`'top'`、`'bottom'`、`'middle'`。
 
 ## triggerEvent(boolean) = false
 
@@ -100,7 +104,7 @@
 
 ## itemGap(number) = 10
 
-主副标题之间的间距。
+主标题和副标题之间的间距。
 
 {{use: partial-rect-layout(componentName="grid ")}}
 

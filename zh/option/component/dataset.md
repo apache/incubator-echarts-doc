@@ -57,10 +57,12 @@ ECharts 4 开始支持了 `数据集`（`dataset`）组件用于单独的数据�
 
 ## sourceHeader(boolean)
 
-`dataset.source` 第一行/列是否是 [维度名](dataset.dimensions) 信息。可选值：
+`dataset.source` 第一行/列是否是 [维度名](dataset.dimensions) 信息。
+
+**可选：**
 
 + `null/undefine`：默认，自动探测。
 + `true`：第一行/列是维度名信息。
 + `false`：第一行/列直接开始是数据。
 
-注意：“第一行/列” 的意思是，如果 [series.seriesLayoutBy](~series.seriesLayoutBy) 设置为 `'column'`（默认值），则取第一行，如果 `series.seriesLayoutBy` 设置为 `'row'`，则取第一列。
+**注意:**“第一行/列” 的意思是，如果 [series.seriesLayoutBy](~series.seriesLayoutBy) 设置为 `'column'`（默认值），则取第一行，如果 `series.seriesLayoutBy` 设置为 `'row'`，则取第一列。

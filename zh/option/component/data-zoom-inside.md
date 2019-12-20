@@ -6,7 +6,7 @@
 
 （参考[数据区域缩放组件（dataZoom）的介绍](~dataZoom)）
 
-所谓『内置』，即内置在坐标系中。
+所谓内置，即内置在坐标系中。
 
 + 平移：在坐标系中滑动拖拽进行数据区域平移。
 + 缩放：
@@ -24,7 +24,7 @@
 
 ## disabled(boolean) = false
 
-是否停止组件的功能。
+是否停止组件的功能。默认不停止。
 
 {{ use: partial-data-zoom-common(
     dataZoomName='dataZoom-inside',
@@ -34,7 +34,9 @@
 
 ## zoomOnMouseWheel(boolean) = true
 
-如何触发缩放。可选值为：
+如何触发缩放。
+
+**可选：**
 
 + `true`：表示不按任何功能键，鼠标滚轮能触发缩放。
 + `false`：表示鼠标滚轮不能触发缩放。
@@ -44,7 +46,9 @@
 
 ## moveOnMouseMove(boolean) = true
 
-如何触发数据窗口平移。可选值为：
+如何触发数据窗口平移。
+
+**可选：**
 
 + `true`：表示不按任何功能键，鼠标移动能触发数据窗口平移。
 + `false`：表示鼠标移动不能触发平移。
@@ -54,7 +58,9 @@
 
 ## moveOnMouseWheel(boolean) = true
 
-如何触发数据窗口平移。可选值为：
+如何触发数据窗口平移。
+
+**可选：**
 
 + `true`：表示不按任何功能键，鼠标滚轮能触发数据窗口平移。
 + `false`：表示鼠标滚轮不能触发平移。
@@ -64,4 +70,4 @@
 
 ## preventDefaultMouseMove(boolean) = true
 
-是否阻止 mousemove 事件的默认行为。
+是否阻止 mousemove 事件的默认行为。默认阻止。

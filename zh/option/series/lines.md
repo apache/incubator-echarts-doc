@@ -208,10 +208,12 @@ ECharts 2.x 里会用地图上的 `markLine` 去绘制迁徙效果，在 ECharts
 #${prefix} show(boolean) = ${defaultShowLabel|default(false)}
 是否显示标签。
 #${prefix} position(string) = 'end'
-标签位置，可选：
-+ `'start'` 线的起始点。
-+ `'middle'` 线的中点。
-+ `'end'`   线的结束点。
+标签位置。
+
+**可选：**
++ `'start'`：线的起始点。
++ `'middle'`：线的中点。
++ `'end'`：线的结束点。
 #${prefix} formatter(string|Function)
 {{ use: partial-2d-data-label-formatter }}
 
