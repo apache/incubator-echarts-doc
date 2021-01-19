@@ -40,7 +40,7 @@ option = {
 There should be an `aria-label` attribute on the chart DOM, which can help the disabled understand the content of charts with the help of certain devices. The value of the label is:
 
 ```
-This is a chart of "Source of user access to a site." The chart type is a pie chart that indicates the source of the visit. The data is - direct access data is 335, mail marketing data is 310, union ad data is 234, video ad data is 135, search engine data is 1548.
+This is a chart about "Source of user access to a site" with type Pie chart named access source. The data is as follows: the data of direct access is 335,the data of mail marketing is 310,the data of union ad is 234,the data of video ad is 135,the data of search engine is 1548.
 ```
 
 The default language is in Chinese, but you can configure it with templates. The following document shows how to do it.
@@ -61,7 +61,7 @@ This is useful when single data values cannot represent what the chart means. Fo
 
 General description of chart.
 
-### withTitle(string) = 'This is a chart about "{title}".'
+### withTitle(string) = 'This is a chart about "{title}"'
 
 If [title.text](~title.text) exists, then this is used. Template variable:
 
@@ -90,14 +90,14 @@ General description for all series. This displays before all series descriptions
 
 - `{seriesCount}`: will be replaced by series count, which is 1.
 
-#### withName(string) = 'The chart type is {seriesType}, which means {seriesName}. '
+#### withName(string) = ' with type {seriesType} named {seriesName}.'
 
 If chart contains `name` attribute, then this is used. Template variable:
 
 - `{seriesName}`: will be replaced by the series `name`;
 - `{seriesType}`: will be replaced by the series type name.
 
-#### withoutName(string) = 'The chart type is {seriesType}.'
+#### withoutName(string) = ' with type {seriesType}.'
 
 If chart doesn't contain `name` attribute, then this is used. Template variable:
 
@@ -108,20 +108,20 @@ If chart doesn't contain `name` attribute, then this is used. Template variable:
 
 Description used when there are more than one chart.
 
-#### prefix(string) =  'It consists of {seriesCount} chart series. '
+#### prefix(string) =  '. It consists of {seriesCount} series count.'
 
 General description for all series. This displays before all series descriptions. Template variable:
 
 - `{seriesCount}`: will be replaced by series count.
 
-#### withName(string) = 'The chart type is {seriesType}, which means {seriesName}. '
+#### withName(string) = ' The {seriesId} series is a {seriesType} representing {seriesName}.'
 
 If series contains `name` attribute, then this is used. Template variable:
 
 - `{seriesName}`: will be replaced by series `name`;
 - `{seriesType}`: will be replaced by series type name.
 
-#### withoutName(string) = 'The chart type is {seriesType}.'
+#### withoutName(string) = ' The {seriesId} series is a {seriesType}.'
 
 If series doesn't contain `name` attribute, then this is used. Template variable:
 
@@ -131,11 +131,11 @@ If series doesn't contain `name` attribute, then this is used. Template variable
 
 Separators between series and series.
 
-##### middle(string) = '；'
+##### middle(string) = ''
 
 Separators other than the last one.
 
-##### end(string) = '.'
+##### end(string) = ''
 
 The last series seperator.
 
@@ -150,17 +150,17 @@ Data-related configures.
 
 Maximum data number.
 
-### allData(string) = 'Its data is --'
+### allData(string) = 'The data is as follows: '
 
 Description used when all data is displayed. Note that this option will **not** set to display all data. If all data should be displayed, [aria.data.maxCount](~aria.data.maxCount) should be set to be `Number.MAX_VALUE`.
 
-### partialData(string) = ''Where the first {displayCnt} entry is -''
+### partialData(string) = 'The first {displayCnt} items are: '
 
 Description used when only part of data is displayed. Template variable:
 
 - `{displayCnt}`: number of data displayed.
 
-### withName(string) = '{name}'s data is {value}'
+### withName(string) = 'the data for {name} is {value}'
 
 If data contains `name` attribute, then this is used. Template variable:
 
@@ -177,7 +177,7 @@ If data doesn't contain `name` attribute, then this is used. Template variable:
 
 Separators between data and data.
 
-#### middle(string) = '，'
+#### middle(string) = ', '
 
 Separators other than the last one.
 
