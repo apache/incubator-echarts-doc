@@ -163,6 +163,10 @@ option = {
     version = '5.0.0'
 ) }}
 
+## strictlyAligned(boolean) = false
+
+{{ use: partial-strictly-aligned }}
+
 ## data(Array)
 
 {{ use: partial-2d-data-desc() }}
